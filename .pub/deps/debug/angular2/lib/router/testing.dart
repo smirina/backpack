@@ -1,0 +1,5 @@
+@Deprecated('Use the angular package (without the 2) instead')
+library angular2.router.testing;
+
+export 'package:angular2/src/mock/location_mock.dart';
+export 'package:angular2/src/mock/mock_location_strategy.dart';

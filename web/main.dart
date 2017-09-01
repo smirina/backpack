@@ -3,7 +3,7 @@
 
 import 'package:angular2/platform/browser.dart';
 
-import 'package:newone/app_component.dart';
+import 'package:backpack/app_component.dart';
 
 void main() {
   bootstrap(AppComponent);
