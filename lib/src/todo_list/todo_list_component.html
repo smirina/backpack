@@ -1,6 +1,23 @@
 <!-- Components info: https://webdev.dartlang.org/components -->
 <div>
-  <material-input label="What do you need to do?"
+  Season
+  <material-radio-group>
+    <material-radio>summer</material-radio>
+    <material-radio>autumn</material-radio>
+    <material-radio>winter</material-radio>
+    <material-radio>spring</material-radio>
+  </material-radio-group>
+</div>
+
+<div>
+  Duration
+  <material-input type="text" label="How long?"></material-input>
+  days
+</div>
+
+<div>
+
+  <material-input label="Add something personal?"
                   autoFocus floatingLabel style="width:80%"
                   [(ngModel)]="newTodo"
                   (keyup.enter)="add()">

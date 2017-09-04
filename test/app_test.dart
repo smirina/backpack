@@ -24,7 +24,7 @@ void main() {
   tearDown(disposeAnyRunningTest);
 
   test('title', () async {
-    expect(await appPO.title, 'My First AngularDart App');
+    expect(await appPO.title, 'Backpack list');
   });
 
   // Testing info: https://webdev.dartlang.org/angular/guide/testing
