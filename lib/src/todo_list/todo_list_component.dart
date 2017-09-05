@@ -2,6 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'dart:async';
+import 'dart:html';
 
 import 'package:angular2/angular2.dart';
 import 'package:angular_components/angular_components.dart';
@@ -21,7 +22,7 @@ import 'todo_list_service.dart';
 class TodoListComponent implements OnInit {
   final TodoListService todoListService;
 
-  List<String> items = [];
+  List<String> items = ['hat', 'map', 'discovery mood'];
   String newTodo = '';
 
   TodoListComponent(this.todoListService);
@@ -38,4 +39,13 @@ class TodoListComponent implements OnInit {
   String remove(int index) => items.removeAt(index);
   void onReorder(ReorderEvent e) =>
       items.insert(e.destIndex, items.removeAt(e.sourceIndex));
+
+  void testFunc() {
+    print('test');
+    querySelector('.test').text = 'Wake up!';
+  }
+
+  void testFunc2() {
+    print('test2');
+  }
 }

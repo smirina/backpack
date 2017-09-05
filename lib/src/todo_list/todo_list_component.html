@@ -1,34 +1,18 @@
 <!-- Components info: https://webdev.dartlang.org/components -->
 <div>
   Season
-  <material-radio-group>
-    <material-radio>summer</material-radio>
-    <material-radio>autumn</material-radio>
+  <material-radio-group >
+    <material-radio value="summer" (click)="testFunc()">summer</material-radio>
+    <material-radio value="autumn">autumn</material-radio>
     <material-radio>winter</material-radio>
     <material-radio>spring</material-radio>
   </material-radio-group>
 </div>
 
 <div>
-  Duration
-  <material-input type="text" label="How long?"></material-input>
-  days
+  <material-button (click)="testFunc2()">Pack!</material-button>
 </div>
-
-<div>
-
-  <material-input label="Add something personal?"
-                  autoFocus floatingLabel style="width:80%"
-                  [(ngModel)]="newTodo"
-                  (keyup.enter)="add()">
-  </material-input>
-
-  <material-fab mini raised
-                (trigger)="add()"
-                [disabled]="newTodo.isEmpty">
-    <glyph icon="add"></glyph>
-  </material-fab>
-</div>
+<div class="test"></div>
 
 <p *ngIf="items.isEmpty">
   Nothing to do! Add items above.

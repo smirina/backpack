@@ -1,48 +1,33 @@
 <!-- Components info: https://webdev.dartlang.org/components -->
 <div>
-  Season
+  <div>[Season]</div>
   <material-radio-group>
-    <material-radio>summer</material-radio>
-    <material-radio>autumn</material-radio>
-    <material-radio>winter</material-radio>
-    <material-radio>spring</material-radio>
+    <material-radio>Лето</material-radio>
+    <material-radio>Осень</material-radio>
+    <material-radio>Зима</material-radio>
+    <material-radio>Весна</material-radio>
   </material-radio-group>
-</div>
 
-<div>
-  Duration
-  <material-input type="text" label="How long?"></material-input>
-  days
 </div>
 
 <div>
 
-  <material-input label="Add something personal?"
-                  autoFocus floatingLabel style="width:80%"
-                  [(ngModel)]="newTodo"
-                  (keyup.enter)="add()">
-  </material-input>
-
-  <material-fab mini raised
-                (trigger)="add()"
-                [disabled]="newTodo.isEmpty">
-    <glyph icon="add"></glyph>
-  </material-fab>
+  <material-button>
+    Собрать
+  </material-button>
 </div>
 
-<p *ngIf="items.isEmpty">
-  Nothing to do! Add items above.
+<!--<div>-->
+  <!--<material-checkbox-->
+          <!--[(checked)]="allowed"-->
+          <!--label="Все отмечено">-->
+  <!--</material-checkbox>-->
+<!--</div>-->
+
+<!--<material-button [disabled]="!allowed">-->
+  <!--Собрать-->
+<!--</material-button>-->
+
+<p class="empty-attention">
+  Возьмите хоть что-нибудь!
 </p>
-
-<div *ngIf="items.isNotEmpty">
-  <ul>
-      <li *ngFor="let item of items; let i=index">
-        <material-checkbox #done materialTooltip="Mark item as done">
-        </material-checkbox>
-        <span [class.done]="done.checked">{{item}}</span>
-        <material-fab mini (trigger)="remove(i)">
-          <glyph icon="delete"></glyph>
-        </material-fab>
-      </li>
-  </ul>
-</div>

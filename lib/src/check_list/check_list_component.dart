@@ -2,40 +2,58 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'dart:async';
+import 'dart:html';
 
 import 'package:angular2/angular2.dart';
 import 'package:angular_components/angular_components.dart';
 
-import 'todo_list_service.dart';
+import 'check_list_service.dart';
 
 @Component(
-  selector: 'todo-list',
-  styleUrls: const ['todo_list_component.css'],
-  templateUrl: 'todo_list_component.html',
+  selector: 'check-list',
+  styleUrls: const ['check_list_component.css'],
+  templateUrl: 'check_list_component.html',
   directives: const [
     CORE_DIRECTIVES,
     materialDirectives,
   ],
-  providers: const [TodoListService],
+  providers: const [CheckListService],
 )
-class TodoListComponent implements OnInit {
-  final TodoListService todoListService;
+
+//void testTitle() {
+//  querySelector('.empty-attention').text = 'Add something!';
+//}
+
+class CheckListComponent implements OnInit {
+  final CheckListService checkListService;
 
   List<String> items = [];
-  String newTodo = '';
+  String newTocheck = '';
 
-  TodoListComponent(this.todoListService);
+  CheckListComponent(this.checkListService);
 
   @override
   Future<Null> ngOnInit() async {
-    items = await todoListService.getTodoList();
+    items = await checkListService.getCheckList();
   }
 
   void add() {
-    items.add(newTodo);
-    newTodo = '';
+    items.add(newTocheck);
+    newTocheck = '';
   }
+
   String remove(int index) => items.removeAt(index);
   void onReorder(ReorderEvent e) =>
       items.insert(e.destIndex, items.removeAt(e.sourceIndex));
 }
+
+//class BackpackModelComponent {
+//  int id, days;
+//  String season, type;
+//  bool children;
+//
+//  BackpackModelComponent( this.season, [this.type, this.days, this.id, this.children]);
+//
+//  String toString() => 'Собрано рюкзаков: $id. Ваши условия: $days дней, $season, $type';
+//}
+

@@ -23,3 +23,12 @@ li material-fab {
 .done {
   text-decoration: line-through;
 }
+
+.green-button:not([raised]):not([disabled]) {
+  color: #4CAF50;
+}
+
+.green-button[raised]:not([disabled]) {
+  background-color: #4CAF50;
+  color: white;
+}
